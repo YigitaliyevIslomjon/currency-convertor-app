@@ -10,6 +10,7 @@ export const useConvertResult = (
   const [convetResult, setConvetResult] = useState<number>(0);
 
   const handleConvertChange = () => {
+   
     setConvetResult(
       inputAmunt *
         (data[toCurrency as keyof typeof data] /

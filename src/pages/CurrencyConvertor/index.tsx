@@ -22,7 +22,7 @@ function CurrencyConvertor() {
     fromCurrency,
     data
   );
-
+  console.log(toCurrency);
   const repalceCurrencyVal = () => {
     setToCurrency(fromCurrency);
     setFromCurrency(toCurrency);
@@ -59,8 +59,8 @@ function CurrencyConvertor() {
           className="currency_width"
           onChange={toCurrencyChange}
           options={currencyList.map((currency) => ({
-            label: currency,
-            value: currency,
+            label: currency.name,
+            value: currency.name,
           }))}
         />
       </div>
