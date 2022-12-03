@@ -22,7 +22,6 @@ function CurrencyConvertor() {
     fromCurrency,
     data
   );
-  console.log(toCurrency);
   const repalceCurrencyVal = () => {
     setToCurrency(fromCurrency);
     setFromCurrency(toCurrency);
