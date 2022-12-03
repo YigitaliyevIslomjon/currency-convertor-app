@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { CurrencyList } from "../type/type";
+import { Currency } from "../../../types/Currency.types";
 
 export const useCount = () => {
   const [count, setCount] = useState<number>(10);
 
   const handleScroll = (
     event: React.UIEvent<HTMLElement>,
-    data: CurrencyList[]
+    data: Currency[]
   ) => {
     let element = event.currentTarget;
     if (
