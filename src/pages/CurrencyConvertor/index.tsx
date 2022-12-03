@@ -27,55 +27,48 @@ function CurrencyConvertor() {
     setFromCurrency(toCurrency);
   };
 
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <div className="currency">
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
-          <div className="currency__container">
-            <Input
-              value={inputAmunt}
-              size="large"
-              className="currency_width"
-              onChange={handleAmountChange}
-            />
-            <Select
-              size="large"
-              value={fromCurrency}
-              className="currency_width"
-              onChange={fromCurrencyChange}
-              options={currencyList.map((currency) => ({
-                label: currency,
-                value: currency,
-              }))}
-            />
-            <div className="currency__circule" onClick={repalceCurrencyVal}>
-              <FontAwesomeIcon icon={faRightLeft} />
-            </div>
-            <Select
-              size="large"
-              value={toCurrency}
-              className="currency_width"
-              onChange={toCurrencyChange}
-              options={currencyList.map((currency) => ({
-                label: currency,
-                value: currency,
-              }))}
-            />
-          </div>
-          <div className="currency__container">
-            <Input
-              value={convetResult}
-              size="large"
-              className="currency_width"
-            />
-            <Button type="primary" size="large" onClick={handleConvertChange}>
-              Convert
-            </Button>
-          </div>
-        </>
-      )}
+      <div className="currency__container">
+        <Input
+          value={inputAmunt}
+          size="large"
+          className="currency_width"
+          onChange={handleAmountChange}
+        />
+        <Select
+          size="large"
+          value={fromCurrency}
+          className="currency_width"
+          onChange={fromCurrencyChange}
+          options={currencyList.map((currency) => ({
+            label: currency,
+            value: currency,
+          }))}
+        />
+        <div className="currency__circule" onClick={repalceCurrencyVal}>
+          <FontAwesomeIcon icon={faRightLeft} />
+        </div>
+        <Select
+          size="large"
+          value={toCurrency}
+          className="currency_width"
+          onChange={toCurrencyChange}
+          options={currencyList.map((currency) => ({
+            label: currency,
+            value: currency,
+          }))}
+        />
+      </div>
+      <div className="currency__container">
+        <Input value={convetResult} size="large" className="currency_width" />
+        <Button type="primary" size="large" onClick={handleConvertChange}>
+          Convert
+        </Button>
+      </div>
     </div>
   );
 }
