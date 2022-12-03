@@ -3,6 +3,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import { menuItems } from "../data/menuItems";
 import "./MainLayoute.scss";
+import ErrorBoundary from "../components/ErrorBoundary";
 const { Header, Sider, Content } = Layout;
 
 interface MainLayoutPop {
@@ -41,7 +42,7 @@ const MainLayout: React.FC<MainLayoutPop> = ({ children }) => {
             minHeight: 280,
           }}
         >
-          {children}
+          <ErrorBoundary>{children}</ErrorBoundary>
         </Content>
       </Layout>
     </Layout>
