@@ -22,6 +22,7 @@ export const useGetCurrencyList = (count: number) => {
           })
         );
         setData(data);
+        let count: number = Number(localStorage.getItem("count") || 0);
         setCurrcyList(data.slice(0, count));
       })
       .catch((err) => {

@@ -10,6 +10,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     navigate("/currency-converter");
+    localStorage.setItem("count", String(8));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

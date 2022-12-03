@@ -13,7 +13,8 @@ export const useCount = () => {
       element.scrollHeight - element.scrollTop === element.clientHeight &&
       data.length > count
     ) {
-      setCount((prev) => prev + 7);
+      setCount((prev) => prev + 8);
+      localStorage.setItem("count", String(count + 8));
     }
   };
   return { count, handleScroll };
