@@ -1,0 +1,12 @@
+.currencyList{
+    height: 100%;
+    overflow-y: scroll;
+}
+.currencyList__container{
+    min-height: 100vh;
+}
+.currencyList__table{
+    .ant-table{
+        font-size: 16px;
+    }
+}
