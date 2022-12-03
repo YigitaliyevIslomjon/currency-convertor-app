@@ -8,6 +8,7 @@ import { useFromCurrency } from "./hooks/useFromCurrency";
 import { useInputAmount } from "./hooks/useInputAmount";
 import { useConvertResult } from "./hooks/useConvertResult";
 import "./index.scss";
+import { Currency } from "../../types/Currency.types";
 
 function CurrencyConvertor() {
   const { inputAmunt, handleAmountChange } = useInputAmount();
@@ -44,9 +45,9 @@ function CurrencyConvertor() {
           value={fromCurrency}
           className="currency_width"
           onChange={fromCurrencyChange}
-          options={currencyList.map((currency) => ({
-            label: currency,
-            value: currency,
+          options={currencyList.map((currency: Currency) => ({
+            label: currency.name,
+            value: currency.name,
           }))}
         />
         <div className="currency__circule" onClick={repalceCurrencyVal}>

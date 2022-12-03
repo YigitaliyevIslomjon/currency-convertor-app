@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Data } from "../type/type";
+import { CurrencyRates } from "../../../types/Currency.types";
 
 export const useConvertResult = (
   inputAmunt: number,
   toCurrency: string,
   fromCurrency: string,
-  data: Data
+  data: CurrencyRates
 ) => {
   const [convetResult, setConvetResult] = useState<number>(0);
 

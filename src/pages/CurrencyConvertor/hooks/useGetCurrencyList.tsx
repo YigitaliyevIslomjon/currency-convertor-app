@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
-import { CurrencyApi, CurrencyList, Data } from "../type/type";
+import {
+  Currency,
+  CurrencyRates,
+  CurrencyResponse,
+} from "../../../types/Currency.types";
 
 export const useGetCurrencyList = () => {
-  const [data, setData] = useState<Data | {}>({});
-  const [currencyList, setCurrcyList] = useState([] as CurrencyList);
+  const [data, setData] = useState<CurrencyRates | {}>({});
+  const [currencyList, setCurrcyList] = useState([] as Currency[]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const getCurrencyList = () => {
     setLoading(true);
     api
-      .get(
+      .get<CurrencyResponse>(
         "/v1/latest?apikey=4qUSJq8p7UmIkFoTgaPAierfYyK4kyvQfjqutInT&currencies="
       )
-      .then((res: CurrencyApi) => {
+      .then((res) => {
+        let data: Currency[] = Object.entries(res.data.data).map((item) => ({
+          name: item[0],
+          value: item[1],
+        }));
         setData(res.data.data);
-        setCurrcyList(Object.keys(res.data.data));
+        setCurrcyList(data);
       })
       .catch((err) => {
         console.log("err", err);
