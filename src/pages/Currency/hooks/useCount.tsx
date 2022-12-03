@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Currency } from "../../../types/Currency.types";
 
 export const useCount = () => {
-  const [count, setCount] = useState<number>(10);
+  const [count, setCount] = useState<number>(7);
 
   const handleScroll = (
     event: React.UIEvent<HTMLElement>,
@@ -13,7 +13,7 @@ export const useCount = () => {
       element.scrollHeight - element.scrollTop === element.clientHeight &&
       data.length > count
     ) {
-      setCount((prev) => prev + 10);
+      setCount((prev) => prev + 7);
     }
   };
   return { count, handleScroll };
