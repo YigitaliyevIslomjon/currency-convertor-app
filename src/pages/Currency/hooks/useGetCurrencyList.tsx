@@ -33,16 +33,19 @@ export const useGetCurrencyList = (count: number) => {
   }
   useEffect(() => {
     getCurrencyList();
-
-    // const intervalId = setInterval(() => {
-    //   // api
-    // }, 10000);
-
-    // return () => {
-    //   clearInterval(intervalId);
-    // };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      getCurrencyList();
+    }, 10000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return { data, loading, currencyList };
 };
