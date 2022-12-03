@@ -1,4 +1,4 @@
-import { Button, Input, Select, Typography } from "antd";
+import { Button, Input, Select } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightLeft } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/Spinner";
